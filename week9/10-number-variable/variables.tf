@@ -4,7 +4,7 @@ variable "http_port" {
 }
 
 variable "https_port" {
-  type    = string
+  type    = number
   default = 443
 }
 variable "ssh_port" {
