@@ -15,3 +15,13 @@ output "instance-type" {
 output "ipaddress" {
   value = aws_instance.ec2_example.private_ip
 }
+
+
+
+output "howmuch-cpu-thread" {
+  value = aws_instance.ec2_example.cpu_threads_per_core
+}
+
+output "what-is-thesubnet-id" {
+  value = aws_instance.ec2_example.subnet_id
+}
