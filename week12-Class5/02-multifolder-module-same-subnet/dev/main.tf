@@ -7,5 +7,6 @@ module "my_vpc" {
 module "my_ec2" {
   source        = "../modules/ec2"
   instance_type = "t2.micro"
+  subnet_id     = module.my_vpc.public_subnet
 }
 
