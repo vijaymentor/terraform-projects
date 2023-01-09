@@ -61,4 +61,5 @@ resource "google_compute_instance" "server1" {
       "systemctl restart google-cloud-ops-agent"
     ]
   }
+  
 }
