@@ -12,6 +12,8 @@ resource "google_compute_instance" "server1" {
 
   boot_disk {
     initialize_params {
+      image = "ubuntu-os-cloud/ubuntu-1804-lts"
+      type = "pd-standard"
 
       labels = {
         my_label = "value"
@@ -19,10 +21,6 @@ resource "google_compute_instance" "server1" {
     }
   }
 
-  // Local SSD disk
-  scratch_disk {
-    interface = "SCSI"
-  }
 
   network_interface {
     network = "default"
