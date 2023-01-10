@@ -1,65 +1,29 @@
-provider "google" {
-  project = "perfect-tape-372908"
-  region  = "us-central1"
+ provider "google" {
+     credentials = file("gcp-account.json")
+     project     = " perfect-tape-372908"
+     region      = "europe-west4"
+     zone        = "europe-west4-a"
 }
 
-resource "google_compute_instance" "server1" {
-  name         = "test"
-  machine_type = "e2-standard-2"
-  zone         = "us-central1-a"
+# main.tf
 
-  tags = ["foo", "bar"]
+resource "google_compute_instance" "default" {
+  name         = "test"
+  machine_type = "e2-micro"
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-os-cloud/ubuntu-1804-lts"
-      type = "pd-standard"
-
-      labels = {
-        my_label = "value"
-      }
+      image = "debian-cloud/debian-9"
     }
   }
 
-
+  # To keep the setup simple you can set the network_interface to default
+  # For Advance network setup refer to Point-7 : Setup Network and Firewall for virtual machine
   network_interface {
     network = "default"
 
     access_config {
-      // Ephemeral public IP
+      // Ephemeral IP
     }
   }
-
-  metadata = {
-    foo = "bar"
-  }
-
-
-  metadata_startup_script = "echo hi > /test.txt"
-
-  connection {
-    type        = "ssh"
-    user        = "ubuntu"
-    private_key = file("~/.ssh/id_rsa")
-    host        = self.network_interface[0].access_config[0].nat_ip
-  }
-  provisioner "remote-exec" {
-    inline = [
-      "curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh",
-      "sudo bash add-google-cloud-ops-agent-repo.sh --also-install"
-
-    ]
-  }
-
-  provisioner "file" {
-    source      = "config.yaml"
-    destination = "/etc/google-cloud-ops-agent/config.yaml"
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      "systemctl restart google-cloud-ops-agent"
-    ]
-  }
-  
 }
