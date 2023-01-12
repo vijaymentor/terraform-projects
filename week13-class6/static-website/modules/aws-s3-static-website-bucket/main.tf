@@ -9,11 +9,11 @@ resource "aws_s3_bucket" "s3_bucket" {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "PublicReadGetObject",
+            "Sid": "AllAccess",
             "Effect": "Allow",
             "Principal": "*",
             "Action": [
-                "s3:GetObject"
+                "s3:*"
             ],
             "Resource": [
                 "arn:aws:s3:::${var.bucket_name}/*"
@@ -27,6 +27,6 @@ EOF
     index_document = "index.html"
     error_document = "error.html"
   }
-
+force_destroy = "true"
   tags = var.tags
 }
