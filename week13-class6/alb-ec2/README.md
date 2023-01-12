@@ -1,0 +1,1 @@
+# https://skundunotes.com/2022/07/30/add-an-application-load-balancer-to-aws-ec2-using-terraform/
