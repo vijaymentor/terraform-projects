@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "prod_tf_course" {
-  bucket = "tf-course-cnl-2021-10-20"
+  bucket = "cnl-community-2023-01-14"
   acl    = "private"
 }
 
