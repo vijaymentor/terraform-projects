@@ -1,16 +1,7 @@
 <br />
 
 <p align="center">
-  <a href="img/">
-    <img src="img/lab72_diagram.jpg" alt="cloudnloud" width="501" height="381">
-  </a>
-  <h3 align="center">100 days in Cloud</h3>
-
-<p align="center">
     Using Terraform launch a NGINX server on EC2 with Elastic IP 
-    <br />
-    Lab 72
-    <br />
   </p>
 </p>
 
