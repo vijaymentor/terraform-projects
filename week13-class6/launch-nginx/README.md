@@ -9,7 +9,7 @@
 <p align="center">
     Using Terraform launch a NGINX server on EC2 with Elastic IP 
     <br />
-    Lab 72
+    Automation
     <br />
   </p>
 </p>
