@@ -11,6 +11,7 @@ provider "aws" {
 module "vpc" {
   source = "./modules/vpc"
   region = var.main_region
+
 }
 resource "aws_instance" "my-instance" {
   # Binds the value of the ami variable to the AMI id in this module.
