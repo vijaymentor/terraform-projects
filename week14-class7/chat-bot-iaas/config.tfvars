@@ -1,5 +1,5 @@
-accessKey        = "AKIA2VK6KRT7NO5FMW4E"
-secretKey        = "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"
+accessKey        = "AKIAWA7RLWPN2WKOHPH3"
+secretKey        = "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"
 region           = "eu-west-1"
 project          = "chatbot"
 key-name         = "chat"

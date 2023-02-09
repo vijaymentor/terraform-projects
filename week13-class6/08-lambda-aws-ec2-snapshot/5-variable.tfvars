@@ -1,5 +1,5 @@
-accessKey  = "AKIA2VK6KRT7LUTOT7XG"
-secretKey  = "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"
+accessKey  = "werewrew7XG"
+secretKey  = "ewrweewrewODozJth++cFpEn"
 region     = "eu-west-1"
 lambdaname = "lambda-aws-ec2-snapshot"
 tagName    = "office-hours"
