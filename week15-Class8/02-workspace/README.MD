@@ -42,3 +42,9 @@ terraform workspace show
 ```
 terraform workspace list
 ```
+
+> now terminate the created resources from each work spaces
+
+```
+terraform workspace select <workspace name>
+```
