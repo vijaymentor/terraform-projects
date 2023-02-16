@@ -12,13 +12,8 @@ provider "aws" {
   region  = "us-east-1"
 }
 
-variable "environment" {
-  type    = string
-  default = "dev"
-}
-
 resource "aws_iam_policy" "s3_policy" {
-  name = "s3_policy_for_${var.environment}"
+  name = "s3_policy_for-${terraform.workspace}"
 
   policy = jsonencode({
     "Version" : "2012-10-17",

@@ -17,6 +17,7 @@ resource "aws_instance" "my_vm" {
   instance_type = var.instance_type
 
   tags = {
-    Name = "sap-server-${terraform.workspace}"
+    Name  = "MLOPS-${terraform.workspace}"
+    Owner = "Cloudnloud-${terraform.workspace}"
   }
 }
